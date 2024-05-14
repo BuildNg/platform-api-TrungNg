@@ -33,7 +33,7 @@ router.route('/posts/:id')
       const result = await Posts.getPost(req.params.id);
       res.json(result);
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      res.status(404).json({ error: error.message });
     }
   })
   .put(async (req, res) => {
@@ -49,7 +49,7 @@ router.route('/posts/:id')
       const result = await Posts.deletePost(req.params.id);
       res.json(result);
     } catch (error) {
-      res.status(500).json({ error: error.message });
+      res.status(404).json({ error: error.message });
     }
   });
 export default router;

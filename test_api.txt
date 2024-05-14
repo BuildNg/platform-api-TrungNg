@@ -1,0 +1,29 @@
+# all posts get:
+curl -X GET "http://localhost:9090/api/posts"
+
+# create new post
+curl -X POST -H "Content-Type: application/json" -d '{
+    "title": "first post",
+    "tags": "words what nice",
+    "content":  "this is a test post",
+    "coverUrl": "https://media.giphy.com/media/uscuTAPrWqmqI/giphy.gif"
+}' "http://localhost:9090/api/posts"
+
+# update by POSTID
+curl -X PUT -H "Content-Type: application/json" -d '{
+    "title": "updated_4_times title",
+    "tags": "words more nice ",
+    "content":  "this is a test post",
+    "coverUrl": "https://media.giphy.com/media/uscuTAPrWqmqI/giphy.gif"
+}' "http://localhost:9090/api/posts/6643b2bb8ea1eee5542e0bc9"
+
+# fetch 1 by POSTID
+curl -X GET "http://localhost:9090/api/posts/6643b2bb8ea1eee5542e0bc9"
+
+# delete by POSTID
+curl -X DELETE -H "Content-Type: application/json" "http://localhost:9090/api/posts/6643b913ca411bbb7639b35c"
+
+# update by POSTID (optional fields)
+curl -X PUT -H "Content-Type: application/json" -d '{
+    "title": "new title"
+}' "http://localhost:9090/api/posts/6643b2bb8ea1eee5542e0bc9"

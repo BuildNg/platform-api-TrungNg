@@ -5,7 +5,7 @@
   "author": "CS52",
   "main": "src/server.js",
   "scripts": {
-    "test": "eslint src",
+    "test": "cypress run",
     "start": "nodemon src/server.js --exec babel-node",
     "babel-start": "babel-node src/server.js",
     "build": "babel src -d dist",
@@ -28,6 +28,7 @@
     "cors": "^2.8.5",
     "ejs": "^3.1.9",
     "express": "^4.19.1",
+    "mongoose": "^8.3.4",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
